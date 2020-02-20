@@ -76,6 +76,15 @@
 										</label>
 										<input type="password" name="password" id="password" class="form-control" placeholder="password"
 											 th:field="*{password}" th:errorclass="error-input" value="xxxxxxxx">
+										<label for="password_confirm">
+											確認用パスワード:
+										</label>
+										<div id="disagreementMessage" style="color: red;"></div>	 
+										<label th:if="${#fields.hasErrors('password')}" th:errors="password" class="error-messages">
+											パスワードが重複しています。
+										</label>
+										<input type="password" name="confirmationPassword" id="confirmationPassword" class="form-control" placeholder="Confirmation Password"
+											 th:field="*{password}" th:errorclass="error-input" value="xxxxxxxx">
 									</div>
 								</div>
 							</div>
@@ -101,5 +110,6 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../static/js/bootstrap.min.js"></script>
+	<script th:src="@{/js/check_email.js}"></script>
 </body>
 </html>
