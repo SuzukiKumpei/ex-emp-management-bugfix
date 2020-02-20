@@ -70,8 +70,9 @@ public class AdministratorController {
 	 */
 	@RequestMapping("/insert")
 	public String insert(@Validated InsertAdministratorForm form, BindingResult result) {
-
+		
 		if (result.hasErrors()) {
+			
 			return "administrator/insert";
 		}else {
 		
@@ -79,7 +80,6 @@ public class AdministratorController {
 			// フォームからドメインにプロパティ値をコピー
 			BeanUtils.copyProperties(form, administrator);
 			administratorService.insert(administrator);
-			// return "employee/list";
 			return "redirect:/";
 		}
 			
