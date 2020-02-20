@@ -1,5 +1,6 @@
 package jp.co.sample.emp_management.controller;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.BeanUtils;
@@ -87,6 +88,7 @@ public class AdministratorController {
 	 */
 	@RequestMapping("/")
 	public String toLogin() {
+		
 		return "administrator/login";
 	}
 
